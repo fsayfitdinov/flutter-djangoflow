@@ -1,16 +1,12 @@
 # .github/workflows/publish.yml
 name: Publish to pub.dev
+run-name: ${{ github.actor }} is publishing djangoflow_openapi on pub.dev 🚀
 
 on:
   push:
     tags:
-      # must align with the tag-pattern configured on pub.dev, often just replace
-      #  with [0-9]+.[0-9]+.[0-9]+*
-      - "djangoflow_openapi-[0-9]+.[0-9]+.[0-9]+*" # tag-pattern on pub.dev: 'v'
-    # If you prefer tags like '1.2.3', without the 'v' prefix, then use:
-    # - '[0-9]+.[0-9]+.[0-9]+*' # tag-pattern on pub.dev: ''
-    # If your repository contains multiple packages consider a pattern like:
-    # - 'my_package_name-v[0-9]+.[0-9]+.[0-9]+*'
+      # must align with the tag-pattern configured on pub.dev
+      - "djangoflow_openapi-[0-9]+.[0-9]+.[0-9]+*" # tag-pattern on pub.dev: 'djangoflow_openapi-{version}'
 
 # Publish using custom workflow
 jobs:
